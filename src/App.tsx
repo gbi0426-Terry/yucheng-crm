@@ -18,8 +18,12 @@ import Settings from './Settings';
 import AuditLogs from './AuditLogs';
 
 function App() {
+  // Determine if we are on GitHub Pages
+  const isGitHubPages = window.location.hostname.includes('github.io');
+  const basename = isGitHubPages ? '/yucheng-crm' : '/';
+
   return (
-    <Router>
+    <Router basename={basename}>
       <Layout>
         <Routes>
           <Route path="/" element={<Dashboard />} />
